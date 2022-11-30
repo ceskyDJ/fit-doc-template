@@ -1,0 +1,73 @@
+\documentclass[a4paper, 11pt, final]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[czech]{babel}
+\usepackage[left=2cm, text={17cm, 24cm}, top=3cm]{geometry}
+
+\usepackage[unicode, hidelinks]{hyperref}
+\urlstyle{same}
+\usepackage[autostyle]{csquotes}
+\usepackage{titling}
+
+% Used style: https://github.com/michal-h21/biblatex-iso690
+\usepackage[backend=biber, style=iso-numeric, sorting=ynt]{biblatex}
+\addbibresource{references.bib}
+
+% Command for course property (source: https://stackoverflow.com/a/2833982)
+\makeatletter
+\newcommand\course[1]{\renewcommand\@course{#1}}
+\newcommand\@course{}
+\makeatother
+
+% Other packages
+\usepackage{pdflscape}
+\usepackage{graphicx}
+
+% Document properties
+\author{Michal Šmahel (xsmahe01)}
+\date{\today}
+\course{Předmět}
+\title{Název dokumentu}
+
+\begin{document}
+
+% Title page
+\begin{titlepage}
+\makeatletter
+\begin{center}
+    \Huge \textsc{Vysoké učení technické v~Brně}\\
+    \huge \textsc{Fakulta informačních technologií}
+    
+    \vspace{\stretch{0.382}}
+    
+    \LARGE \@course\\
+    \Huge \@title
+    
+    \vspace{\stretch{0.618}}
+\end{center}
+
+\Large \noindent \@date \hfill \@author
+\makeatother
+\end{titlepage}
+
+% Table of contents
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document content
+
+
+\section{Úvod}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Literature
+\newpage
+% \nocite{*} % Add non-cited items from references DB
+\printbibliography[title=Použitá literatura]
+
+\end{document}
